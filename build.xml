@@ -5,7 +5,9 @@
 	<property name="full-compile" value="true" />
 	<property name="resdir" value="res" />
 
-	<path id="classpath.base" />
+	<path id="classpath.base" >
+	   
+	</path>
 
 	<path id="classpath.test">
 		<pathelement location="${resdir}/gson-2.8.2.jar" />
@@ -42,7 +44,7 @@
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-server.jar" />
 		<pathelement location="${testdir}" />
 		<pathelement location="${srcdir}" />
-		<pathelement location="${targetdir}/classes/" />
+		<pathelement location="${targetdir}/classes/serviceTests/" />
 		<path refid="classpath.base" />
 	</path>
 
