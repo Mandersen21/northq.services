@@ -63,13 +63,13 @@
 	<target name="test" depends="compile">
 		<junit fork="yes" haltonfailure="no" printsummary="yes">
 			<classpath>
-				<path refid="testcase.path" />
-				<pathelement location="${targetdir}" />
+				<path refid="classpath.test" />
+				<pathelement location="${targetdir}/classes/" />
 			</classpath>
 			<formatter type="xml" />
-			 <batchtest>
-            <fileset dir="${testdir}" includes="**/*Test*.java" />
-        </batchtest>
+			<batchtest>
+				<fileset dir="${testdir}" includes="**/*Test*.java" />
+			</batchtest>
 		</junit>
 	</target>
 
