@@ -1,15 +1,17 @@
 <project name = "NorthqServicesStandAlone" default = "test" basedir = ".">
    <property name = "testdir" location = "test" />
    <property name = "srcdir" location = "src" />
+   <property name = "targetdir" location = "target" />
    <property name = "full-compile" value = "true" />
    <property name = "resdir" value = "res" />
     
    <path id = "classpath.base"/>
    
    <path id = "classpath.test">
-      <pathelement location = "${resdir}" />
+      <pathelement location = "${resdir}/gson-2.8.2.jar" />
       <pathelement location = "${testdir}" />
       <pathelement location = "${srcdir}" />
+      <pathelement location="${targetdir}/classes/" />
       <path refid = "classpath.base" />
    </path>
     
