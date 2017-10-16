@@ -64,7 +64,7 @@
 		<junit fork="yes" haltonfailure="no" printsummary="yes">
 			<classpath>
 				<path refid="testcase.path" />
-				<pathelement location="${testdir}" />
+				<pathelement location="${targetdir}" />
 			</classpath>
 			<formatter type="xml" />
 		</junit>
