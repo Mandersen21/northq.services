@@ -1,42 +1,69 @@
-<project name = "NorthqServicesStandAlone" default = "test" basedir = ".">
-   <property name = "testdir" location = "test" />
-   <property name = "srcdir" location = "src" />
-   <property name = "targetdir" location = "target" />
-   <property name = "full-compile" value = "true" />
-   <property name = "resdir" value = "res" />
-    
-   <path id = "classpath.base"/>
-   
-   <path id = "classpath.test">
-      <pathelement location = "${resdir}/gson-2.8.2.jar" />
-      <pathelement location = "${resdir}/jaxrs-ri/api/javax.ws.rs-api-2.1.jar" />
-      <pathelement location = "${resdir}/jaxrs-ri/ext/*.jar" />
-      <pathelement location = "${resdir}/jaxrs-ri/lib/*.jar" />
-      <pathelement location = "${testdir}" />
-      <pathelement location = "${srcdir}" />
-      <pathelement location="${targetdir}/classes/" />
-      <path refid = "classpath.base" />
-   </path>
-    
-   <target name = "clean" >
-      <delete verbose = "${full-compile}">
-         <fileset dir = "${testdir}" includes = "**/*.class" />
-      </delete>
-   </target>
-    
-   <target name = "compile" depends = "clean">
-      <javac srcdir = "${srcdir}" destdir = "${testdir}" 
-         verbose = "${full-compile}">
-         <classpath refid = "classpath.test"/>
-      </javac>
-   </target>
-    
-   <target name = "test" depends = "compile">
-      <junit>
-         <classpath refid = "classpath.test" />
-         <formatter type = "brief" usefile = "false" />
-         <test name = "TestMessageUtil" />
-      </junit>
-   </target>
-    
+<project name="NorthqServicesStandAlone" default="test" basedir=".">
+	<property name="testdir" location="test" />
+	<property name="srcdir" location="src" />
+	<property name="targetdir" location="target" />
+	<property name="full-compile" value="true" />
+	<property name="resdir" value="res" />
+
+	<path id="classpath.base" />
+
+	<path id="classpath.test">
+		<pathelement location="${resdir}/gson-2.8.2.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/api/javax.ws.rs-api-2.1.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/aopalliance-repackaged-2.5.0-b42.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/cdi-api-1.1.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/el-api-2.2.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/hk2-api-2.5.0-b42.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/hk2-locator-2.5.0-b42.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/hk2-utils-2.5.0-b42.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/javassist-3.22.0-CR2.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/javax.annotation-api-1.2.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/javax.inject-1.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/javax.inject-2.5.0-b42.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/javax.json-1.1.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/javax.json-api-1.1.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/javax.json.bind-api-1.0.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/javax.servlet-api-3.0.1.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/jaxb-api-2.2.7.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/jsr250-api-1.0.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/org.osgi.core-4.2.0.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/osgi-resource-locator-1.0.1.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/persistence-api-1.0.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/validation-api-1.1.0.Final.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/ext/yasson-1.0.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-common.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-container-servlet-core.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-container-servlet.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-hk2.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-media-jaxb.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-media-json-binding.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-media-sse.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-server.jar" />
+		<pathelement location="${testdir}" />
+		<pathelement location="${srcdir}" />
+		<pathelement location="${targetdir}/classes/" />
+		<path refid="classpath.base" />
+	</path>
+
+	<target name="clean">
+		<delete verbose="${full-compile}">
+			<fileset dir="${testdir}" includes="**/*.class" />
+		</delete>
+	</target>
+
+	<target name="compile" depends="clean">
+		<javac srcdir="${srcdir}" destdir="${testdir}" verbose="${full-compile}">
+			<classpath refid="classpath.test" />
+		</javac>
+	</target>
+
+	<target name="test" depends="compile">
+		<junit>
+			<classpath refid="classpath.test" />
+			<formatter type="brief" usefile="false" />
+			<test name="TestMessageUtil" />
+		</junit>
+	</target>
+
 </project>
