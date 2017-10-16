@@ -43,6 +43,8 @@
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-media-json-binding.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-media-sse.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-server.jar" />
+		<pathelement location="/Applications/eclipse/plugins/junit.jar"/>
+        <pathelement location="/Applications/eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
 		<pathelement location="${testdir}" />
 		<pathelement location="${srcdir}" />
 		<path refid="classpath.base" />
