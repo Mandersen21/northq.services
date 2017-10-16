@@ -10,6 +10,7 @@
 	</path>
 
 	<path id="classpath.test">
+	    <pathelement location="${resdir}/junit/junit-4.12.jar" />   
 		<pathelement location="${resdir}/gson-2.8.2.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/api/javax.ws.rs-api-2.1.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/ext/aopalliance-repackaged-2.5.0-b42.jar" />
