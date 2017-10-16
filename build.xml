@@ -35,6 +35,7 @@
 		<pathelement location="${resdir}/jaxrs-ri/ext/persistence-api-1.0.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/ext/validation-api-1.1.0.Final.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/ext/yasson-1.0.jar" />
+		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-client.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-common.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-container-servlet-core.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-container-servlet.jar" />
