@@ -45,7 +45,7 @@
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-server.jar" />
 		<pathelement location="${testdir}" />
 		<pathelement location="${srcdir}" />
-		<pathelement location="${target}/classes/ServicesTest.class" />
+		<pathelement location="${target}/classes/ServicesTest" />
 		<path refid="classpath.base" />
 	</path>
 
