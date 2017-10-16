@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 
 import java.io.IOException;
@@ -40,7 +39,6 @@ public class ServicesTest {
         assertEquals(network.getUserId(), "2166");
         assertTrue(network.getHouses().length >= 1);
         // assertTrue(network.getGateways().size() >= 1);
-
     }
 
     @Test
