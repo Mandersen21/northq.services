@@ -2,12 +2,13 @@
    <property name = "testdir" location = "tests" />
    <property name = "srcdir" location = "src" />
    <property name = "full-compile" value = "true" />
+   <property name = "resdir" value = "res" />
     
    <path id = "classpath.base"/>
-    
+   
    <path id = "classpath.test">
-      <pathelement location = "lib/junit-4.10.jar" />
       <pathelement location = "${testdir}" />
+      <pathelement location = "${resdir}" />
       <pathelement location = "${srcdir}" />
       <path refid = "classpath.base" />
    </path>
