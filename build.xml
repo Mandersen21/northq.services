@@ -5,12 +5,12 @@
 	<property name="full-compile" value="true" />
 	<property name="resdir" value="res" />
 
-	<path id="classpath.base" >
-	   
+	<path id="classpath.base">
+
 	</path>
 
 	<path id="classpath.test">
-	    <pathelement location="${resdir}/junit/junit-4.12.jar" />   
+		<pathelement location="${resdir}/junit/junit-4.12.jar" />
 		<pathelement location="${resdir}/gson-2.8.2.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/api/javax.ws.rs-api-2.1.jar" />
 		<pathelement location="${resdir}/jaxrs-ri/ext/aopalliance-repackaged-2.5.0-b42.jar" />
@@ -62,10 +62,15 @@
 	</target>
 
 	<target name="test" depends="compile">
-		<junit>
-			<classpath refid="classpath.test" />
+		<junit printsummary="on" haltonfailure="yes">
+			<classpath>
+				<path refid="classpath.test" />
+				<pathelement location="${testdir}" />
+			</classpath>
 			<formatter type="brief" usefile="false" />
-			<test name="ServicesTest" />
+			<batchtest>
+				<fileset dir="${testdir}" includes="**/*Test*.java" />
+			</batchtest>
 		</junit>
 	</target>
 
