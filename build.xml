@@ -45,7 +45,6 @@
 		<pathelement location="${resdir}/jaxrs-ri/lib/jersey-server.jar" />
 		<pathelement location="${testdir}" />
 		<pathelement location="${srcdir}" />
-		<pathelement location="${target}/classes/ServicesTest" />
 		<path refid="classpath.base" />
 	</path>
 
@@ -62,15 +61,12 @@
 	</target>
 
 	<target name="test" depends="compile">
-		<junit printsummary="on" haltonfailure="yes">
+		<junit fork="yes" haltonfailure="no" printsummary="yes">
 			<classpath>
-				<path refid="classpath.test" />
+				<path refid="testcase.path" />
 				<pathelement location="${testdir}" />
 			</classpath>
-			<formatter type="brief" usefile="false" />
-			<batchtest>
-				<fileset dir="${testdir}" includes="**/*Test*.java" />
-			</batchtest>
+			<formatter type="xml" />
 		</junit>
 	</target>
 
