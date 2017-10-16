@@ -66,6 +66,7 @@
 				<path refid="classpath.test" />
 				<pathelement location="${targetdir}/classes/" />
 			</classpath>
+			<formatter type="plain" usefile="false" />
 			<formatter type="xml" />
 			<batchtest>
 				<fileset dir="${testdir}" includes="**/*Test*.java" />
