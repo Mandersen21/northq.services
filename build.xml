@@ -9,6 +9,7 @@
    
    <path id = "classpath.test">
       <pathelement location = "${resdir}/gson-2.8.2.jar" />
+      <pathelement location = "${resdir}/jaxrs-ri/**.*jar" />
       <pathelement location = "${testdir}" />
       <pathelement location = "${srcdir}" />
       <pathelement location="${targetdir}/classes/" />
