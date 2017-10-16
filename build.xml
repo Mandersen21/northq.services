@@ -1,5 +1,5 @@
-<project name = "NorthqServicesStandAlone" default = "tests" basedir = ".">
-   <property name = "testdir" location = "tests" />
+<project name = "NorthqServicesStandAlone" default = "test" basedir = ".">
+   <property name = "testdir" location = "test" />
    <property name = "srcdir" location = "src" />
    <property name = "full-compile" value = "true" />
    <property name = "resdir" value = "res" />
@@ -7,8 +7,8 @@
    <path id = "classpath.base"/>
    
    <path id = "classpath.test">
-      <pathelement location = "${testdir}" />
       <pathelement location = "${resdir}" />
+      <pathelement location = "${testdir}" />
       <pathelement location = "${srcdir}" />
       <path refid = "classpath.base" />
    </path>
