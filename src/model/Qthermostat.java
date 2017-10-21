@@ -7,6 +7,7 @@ public class Qthermostat extends Thing implements IThing {
 
     public Qthermostat(Thermostat ther) {
         super();
+
         this.ther = ther;
     }
 
@@ -20,8 +21,9 @@ public class Qthermostat extends Thing implements IThing {
 
     @Override
     public String getNodeID() {
-        // TODO Auto-generated method stub
-        return null;
+
+        return ther.node_id + "";
+
     }
 
 }

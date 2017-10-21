@@ -12,6 +12,7 @@ import model.NGateway;
 import model.NorthNetwork;
 import model.Qmotion;
 import model.Qplug;
+import model.Qthermostat;
 import model.json.Gateway;
 import model.json.GatewayStatus;
 import model.json.House;
@@ -192,6 +193,19 @@ public class NorthqServices {
 
         }
         return false;
+    }
+
+    public boolean setTemperatur(String token, String user, String gateway, String temperature, Qthermostat ther)
+            throws IOException, Exception {
+        Form form = new Form();
+        form.param("user", user);
+        form.param("token", token);
+        form.param("gateway", gateway);
+        form.param("room_id", ther.getTher().room + "");
+        form.param("temperature", temperature);
+        Response response = networkUtils.getHttpPostResponse("https://homemanager.tv/main/setRoomTemperature", form);
+        return response.getStatus() == 200;
+
     }
 
 }

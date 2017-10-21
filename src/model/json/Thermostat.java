@@ -7,7 +7,7 @@ public class Thermostat {
     public long uploaded;
     public int product;
     public int firmware;
-    public int rooom;
+    public int room;
     public int battery;
     public int interval;
     public VersionV2Model versionV2;

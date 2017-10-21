@@ -13,6 +13,7 @@ import model.NGateway;
 import model.NorthNetwork;
 import model.Qmotion;
 import model.Qplug;
+import model.Qthermostat;
 import model.Thing;
 import model.json.Notification;
 import model.json.UserNotification;
@@ -220,5 +221,39 @@ public class ServicesTest {
         mock.UserNotifications.remove(0);
         mock.UserNotifications.add(mockNot);
         assertTrue(!ns.isTriggered(mock));
+
     }
+
+    @Test
+    public void thermostatTest() throws IOException, Exception {
+        NGateway gateway = network.getGateways().get(0);
+        ArrayList<Thing> testThings = network.getGateways().get(0).getThings();
+        Qthermostat ther = null;
+        for (int i = 0; i < testThings.size(); i++) {
+            if (testThings.get(i) instanceof Qthermostat) {
+                ther = (Qthermostat) testThings.get(i);
+            }
+        }
+        if (ther == null) {
+            fail("no motion was detected in network!");
+        }
+        boolean res = ns.setTemperatur(network.getToken(), network.getUserId(), gateway.getGatewayId(), "20", ther);
+        assertTrue(res);
+        // fetch new status:
+        network = ns.mapNorthQNetwork(user.get(0), user.get(1));
+        gateway = network.getGateways().get(0);
+        testThings = network.getGateways().get(0).getThings();
+        ther = null;
+        for (int i = 0; i < testThings.size(); i++) {
+            if (testThings.get(i) instanceof Qthermostat) {
+                ther = (Qthermostat) testThings.get(i);
+            }
+        }
+        if (ther == null) {
+            fail("no motion was detected in network!");
+        }
+
+        // assertEquals(ther.getTher().temperature + "", "20");
+    }
+
 }
